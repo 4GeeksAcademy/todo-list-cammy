@@ -18,9 +18,9 @@ const Home = () => {
 				type="text" 
 				onChange={(evt) => setTodo(evt.target.value)} 
 				value={todo}
-				onKeyPress={(evt) => {
+				onKeyDown={(evt) => {
 					if (evt.key === "Enter") {
-						setTodos([todos.concat](todo));
+						setTodos(prev => [...prev,todo]);
 						setTodo("");
 					}
 				}}
